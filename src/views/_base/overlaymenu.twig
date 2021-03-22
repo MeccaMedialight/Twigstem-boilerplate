@@ -1,0 +1,29 @@
+<aside class="overlaymenu transition-all inline-block ">
+    <!-- LEFT -->
+    <div class="aside-left aside shadow-lg origin-top-right w-4/6 bg-gray-200 text-black aside-open">
+        <div class=" mx-auto overflow-hidden aside-content p-12 xl:p24">
+            <div class="items-center flex flex-wrap">
+                {% for group in sitemenu %}
+                    <div class="w-full md:w-1/2 ml-auto mr-auto px-4">
+                        <h2 class="prose border-b">
+                            {{ group.name }}
+                        </h2>
+                        <ul class="sitemap mb-2 md:mb-4 lg:mb-6 ">
+                            {% for child in group.children %}
+                                <li class="my-1">
+                                    <a href="{{ child.url }}" class=""><span>{{ child.name }}</span></a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- RIGHT -->
+    <div class="aside-right aside shadow-lg origin-top-right w-2/6 bg-gray-50 text-black aside-open">
+        <div class=" mx-auto overflow-hidden aside-content p-12 xl:p24">
+            RIGHT SIDE
+        </div>
+    </div>
+</aside>

@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+/* custom */
+@import "./css/header.css";
+@import "./css/overlaymenu.css";
+@import "./css/buttons.css";
+@import "./css/labels.css";
+@import "./css/widgets.css";
+
+@import "tailwindcss/utilities";

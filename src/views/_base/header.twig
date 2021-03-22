@@ -1,0 +1,42 @@
+<header id="mainheader" class="js-header active-header relative bg-white py-4 top-0 left-0 right-0 z-10">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center">
+            <div class="flex-1">
+                <a class="logo" href="/">Boilerplate</a>
+            </div>
+
+            <nav class="hidden lg:flex items-center">
+
+                <a href="#" class="px-3 lg:px-6 py-3 font-bold uppercase text-secondary hover:text-primary">Lorem</a>
+                <a href="#" class="px-3 lg:px-6 py-3 font-bold uppercase text-secondary hover:text-primary">Ipsum</a>
+                <a href="#" class="px-3 lg:px-6 py-3 font-bold uppercase text-secondary hover:text-primary">Dolor</a>
+                <a href="#" class="px-2 lg:px-4 py-3 font-bold uppercase text-secondary hover:text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="feather feather-search">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </a>
+                <a href="#" class="px-2 lg:px-4 py-3 font-bold uppercase text-secondary hover:text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="feather feather-shopping-cart">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </a>
+            </nav>
+            <button class="menuburger text-secondary pl-3 lg:pl-6 py-3 opens-menu z-50">
+                <svg width="24" height="24" viewBox="0 0 100 100">
+                    <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                    <path class="line line2" d="M 20,50 H 80" />
+                    <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                </svg>
+
+            </button>
+        </div>
+    </div>
+    {% include "overlaymenu.twig" %}
+</header>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+{% include "_base/head.twig" %}
+<body class="font-custom min-h-screen">
+{% include "header.twig" %}
+
+
+<main class="">
+    {% block content %}
+            {% include "content.twig" %}
+    {% endblock %}
+</main>
+
+
+{% include "footer.twig" %}
+<script src="/dist/app.js"></script>
+</body>
+</html>

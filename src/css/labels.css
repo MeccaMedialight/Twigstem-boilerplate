@@ -1,0 +1,11 @@
+.btn-label {
+    @apply inline-flex justify-center py-1 px-2 border-gray-100 text-xs leading-5 font-light rounded-lg transition duration-150 ease-in-out;
+    @apply text-black;
+    @apply bg-gray-100 !important;
+    margin:2px;
+}
+
+.btn-label:hover, .btn-checkbox:checked + .btn-label {
+    @apply inline-flex justify-center  border-transparent text-xs leading-5 font-light rounded-lg transition duration-150 ease-in-out;
+    @apply bg-gray-200  text-black !important;
+}

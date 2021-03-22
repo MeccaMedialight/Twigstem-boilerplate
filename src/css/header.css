@@ -1,0 +1,20 @@
+.active-header {
+
+}
+
+.scroll-down .active-header {
+    transform: translateY(-100%);
+    transition: all .3s ease-in-out;
+    opacity: 0;
+}
+
+.scroll-up .active-header {
+    position: fixed;
+    z-index: 21;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateY(0);
+    transition: all .3s ease-in-out;
+    opacity:1;
+}

@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+{% block content %}
+    <div class="py-6 sm:px-6 lg:px-8 bg-gray-50">
+
+        <div class="container mx-auto relative px-4 py-6 h-screen">
+            <div class="bg-red-800 text-white rounded-lg border shadow-lg p-10 max-w-5xl">
+                <h1 class="font-bold ">Error, Dammit!</h1>
+                <div>
+                    {{ error }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

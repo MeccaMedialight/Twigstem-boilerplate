@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Lorem",
+    "url" : "#",
+    "children": [
+      {
+        "name": "Lorem",
+        "url" : "#"
+      },
+      {
+        "name": "Ipsum",
+        "url" : "#"
+      },
+      {
+        "name": "Dolor",
+        "url" : "#"
+      }
+    ]
+  },
+  {
+    "name": "Ipsum",
+    "url" : "#",
+    "children": [
+      {
+        "name": "Diddly",
+        "url" : "#"
+      },
+      {
+        "name": "Doowop",
+        "url" : "#"
+      },
+      {
+        "name": "Bambalam",
+        "url" : "#"
+      }
+    ]
+  }
+]

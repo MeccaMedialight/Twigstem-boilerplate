@@ -1,0 +1,76 @@
+.btn {
+    @apply inline-flex uppercase justify-center py-2 px-4 border border-gray-500 text-sm leading-5 font-medium rounded-full transition duration-150 ease-in-out;
+    @apply bg-gray-50 text-black !important;
+}
+
+.btn.disabled,
+.btn[disabled] {
+    pointer-events: none;
+}
+
+.btn.active, .btn:active {
+    transition-duration: .25s;
+    transform: scale(.95);
+}
+
+.btn:hover {
+    @apply bg-black text-white  !important;
+}
+
+.btn:focus {
+    @apply outline-none
+}
+
+/** ---------------
+    BUTTON VARIANTS
+--------------- */
+
+.btn.btn-txt {
+    @apply inline-flex justify-center py-2 px-4  border-transparent text-sm leading-5 font-normal rounded-full transition duration-150 ease-in-out;
+    @apply text-black bg-transparent !important;
+}
+
+.btn.btn-warn {
+    @apply inline-flex justify-center py-2 px-4  border-transparent text-sm leading-5 font-medium rounded-full transition duration-150 ease-in-out;
+    @apply text-white bg-red-700 !important;
+}
+
+.btn.btn-txt:hover, .btn.btn-txt:active {
+    @apply inline-flex justify-center py-2 px-4  border-transparent text-sm leading-5 font-normal rounded-full transition duration-150 ease-in-out;
+    @apply bg-black  text-white !important;
+}
+
+.btn.btn-warn:hover, .btn.btn-warn:active {
+    @apply inline-flex justify-center py-2 px-4  border-transparent text-sm leading-5 font-medium rounded-full transition duration-150 ease-in-out;
+    @apply bg-red-500  text-white !important;
+}
+
+.btn.btn-secondary {
+    @apply inline-flex justify-center py-2 px-4 border border-black text-sm leading-5 font-normal rounded-full transition duration-150 ease-in-out;
+    @apply text-black bg-transparent !important;
+}
+
+.btn.btn-secondary:hover, .btn.btn-secondary:active, .btn.btn-secondary.active {
+    @apply inline-flex justify-center py-2 px-4  border-transparent text-sm leading-5 font-normal rounded-full transition duration-150 ease-in-out;
+    @apply bg-black  text-white !important;
+}
+
+.btn.btn-dark {
+    @apply inline-flex justify-center py-2 px-4 border border-white text-sm leading-5 font-normal rounded-full transition duration-150 ease-in-out;
+    @apply text-white bg-black !important;
+}
+
+.btn.btn-dark:hover, .btn.btn-dark:active, .btn.btn-dark.active {
+    @apply inline-flex justify-center py-2 px-4  border-white text-sm leading-5 font-normal rounded-full transition duration-150 ease-in-out;
+    @apply bg-white  text-black !important;
+}
+
+.btn.btn-lg {
+    @apply w-full flex items-center px-8 py-3 text-base leading-6;
+}
+
+@screen md {
+    .btn.btn-lg {
+        @apply py-4 text-lg px-10;
+    }
+}
