@@ -8,6 +8,9 @@
 |   * close the menu by clicking on elements with class '.menu-close' or
 |     pressing the esc key
 |
+| @version 1.0
+| @author luke@meccamedialight.com.au
+|
 */
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -30,6 +33,25 @@
     for (let i = 0; i < closemenu.length; i++) {
         closemenu[i].addEventListener('click', toggleMenu)
     }
+
+
+    // setup transitions
+    function getTransitionEndEventName() {
+        var transitions = {
+            "transition": "transitionend",
+            "OTransition": "oTransitionEnd",
+            "MozTransition": "transitionend",
+            "WebkitTransition": "webkitTransitionEnd"
+        }
+        let bodyStyle = document.body.style;
+        for (let transition in transitions) {
+            if (bodyStyle[transition] != undefined) {
+                return transitions[transition];
+            }
+        }
+    }
+
+    let transitionEndEventName = getTransitionEndEventName();
 
     function toggleMenu() {
         const body = document.querySelector('body')
@@ -85,23 +107,6 @@
         }
     }
 
-    // setup transitions
-    function getTransitionEndEventName() {
-        var transitions = {
-            "transition": "transitionend",
-            "OTransition": "oTransitionEnd",
-            "MozTransition": "transitionend",
-            "WebkitTransition": "webkitTransitionEnd"
-        }
-        let bodyStyle = document.body.style;
-        for (let transition in transitions) {
-            if (bodyStyle[transition] != undefined) {
-                return transitions[transition];
-            }
-        }
-    }
-
-    let transitionEndEventName = getTransitionEndEventName();
 
     document.addEventListener('keydown', function (evt) {
 
