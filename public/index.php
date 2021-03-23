@@ -5,21 +5,6 @@ define('TWIGSTEM_START', microtime(true));
 
 /*
 |--------------------------------------------------------------------------
-| Check If Application Is Under Maintenance
-|--------------------------------------------------------------------------
-|
-| If the application is maintenance / demo mode via the "down" command we
-| will require this file so that any prerendered template can be shown
-| instead of starting the framework, which could cause an exception.
-|
-*/
-
-if (file_exists(__DIR__.'/maintenance.php')) {
-    require __DIR__.'/maintenance.php';
-}
-
-/*
-|--------------------------------------------------------------------------
 | Register The Auto Loader
 |--------------------------------------------------------------------------
 |
@@ -43,7 +28,7 @@ require __DIR__.'/../vendor/autoload.php';
 */
 
 // path to application (directory containing views and data)
-$appDir = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR;
-$Twigstem = new \Twigstem\Server($appDir);
+$srcDir = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR;
+$Twigstem = new \Twigstem\Server($srcDir);
 $Twigstem->serve();
 
