@@ -1,0 +1,279 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "Film": "2001",
+      "Director": "Stanley Kubrick",
+      "Leading_actors": "Daniel Richter, Gary Lockwood, Keir Dullea, William Sylvester",
+      "Year_of_cinema_release": "1968",
+      "Oscars": "1",
+      "IMDB link": "http://www.imdb.com/title/tt0062622/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/36269/2001",
+      "Country": "USA"
+    },
+    {
+      "id": 2,
+      "Film": "Metropolis",
+      "Director": "Fritz Lang",
+      "Leading_actors": "Alfred Abel, Brigitte Helm, Gustav Frohlich, Gustav Fruhlich",
+      "Year_of_cinema_release": "1927",
+      "Oscars": "",
+      "IMDB link": "http://www.imdb.com/title/tt0017136/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/75782/metropolis",
+      "Country": "Germany"
+    },
+    {
+      "id": 3,
+      "Film": "Blade Runner",
+      "Director": "Ridley Scott",
+      "Leading_actors": "Harrison Ford, Rutger Hauer, Sean Young",
+      "Year_of_cinema_release": "1982",
+      "Oscars": "",
+      "IMDB link": "http://www.imdb.com/title/tt0083658/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/76627/blade-runner",
+      "Country": "USA"
+    },
+    {
+      "id": 4,
+      "Film": "Alien",
+      "Director": "Ridley Scott",
+      "Leading_actors": "Ian Holm, John Hurt, Sigourney Weaver, Tom Skerritt",
+      "Year_of_cinema_release": "1979",
+      "Oscars": "1",
+      "IMDB link": "http://www.imdb.com/title/tt0078748/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/75860/alien",
+      "Country": "USA"
+    },
+    {
+      "id": 5,
+      "Film": "The Wizard of Oz",
+      "Director": "Victor Fleming",
+      "Leading_actors": "Bert Lahr, Frank Morgan, Jack Haley, Judy Garland, Ray Bolger",
+      "Year_of_cinema_release": "1939",
+      "Oscars": "2",
+      "IMDB link": "http://www.imdb.com/title/tt0032138/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/36148/wizard.of.oz",
+      "Country": "USA"
+    },
+    {
+      "id": 6,
+      "Film": "ET",
+      "Director": "Steven Spielberg",
+      "Leading_actors": "Dee Wallace, Drew Barrymore, Henry Thomas, Peter Coyote",
+      "Year_of_cinema_release": "1982",
+      "Oscars": "4",
+      "IMDB link": "http://www.imdb.com/title/tt0083866/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/92910/e.t.the.extra-terrestrial",
+      "Country": "USA"
+    },
+    {
+      "id": 6,
+      "Film": "Solaris",
+      "Director": " Andrei Tarkovsky",
+      "Leading_actors": "Donatas Banionis, Juri Jarvet, Nataly Bondarchuk, Natalya Bondarchuk",
+      "Year_of_cinema_release": "1972",
+      "Oscars": "",
+      "IMDB link": "http://www.imdb.com/title/tt0069293/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/76558/solaris",
+      "Country": "USA"
+    },
+    {
+      "id": 8,
+      "Film": "Spirited Away",
+      "Director": "Hayao Miyazaki",
+      "Leading_actors": "Daveigh Chase, Jason Marsden, Jason Marsdon, Mari Natsuki, Miyu Irino, Rumi Hiragi, Suzanne Pleshette",
+      "Year_of_cinema_release": "2001",
+      "Oscars": "1",
+      "IMDB link": "http://www.imdb.com/title/tt0245429/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/96263/spirited.away",
+      "Country": "Japan"
+    },
+    {
+      "id": 9,
+      "Film": "Star Wars  (1977)",
+      "Director": "George Lucas",
+      "Leading_actors": "Alec Guinness, Carrie Fisher, David Prowse, Harrison Ford, Mark Hamill, Peter Cushing, Peter Mayhew",
+      "Year_of_cinema_release": "1977",
+      "Oscars": "6",
+      "IMDB link": "http://www.imdb.com/title/tt0076759/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/36316/star.wars",
+      "Country": "USA"
+    },
+    {
+      "id": 10,
+      "Film": "Close Encounters",
+      "Director": "Steven Spielberg",
+      "Leading_actors": "Melinda Dillon, Richard Dreyfuss",
+      "Year_of_cinema_release": "1977",
+      "Oscars": "1",
+      "IMDB link": "http://www.imdb.com/title/tt0075860/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/36315/close-encounters-of-the-third-kind",
+      "Country": "USA"
+    },
+    {
+      "id": 10,
+      "Film": "King Kong",
+      "Director": "Ernest B Schoedsack, Merian C Cooper",
+      "Leading_actors": "Bruce Cabot, Ernest B Schoedsack, Fay Wray, Frank Reicher, James Flavin, John Armstrong, Noble Jhonson, Robert Armstrong",
+      "Year_of_cinema_release": "1933",
+      "Oscars": "",
+      "IMDB link": "http://www.imdb.com/title/tt0024216/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/36134/king.kong",
+      "Country": "USA"
+    },
+    {
+      "id": 12,
+      "Film": "Terminator/Terminator 2",
+      "Director": "James Cameron",
+      "Leading_actors": "Arnold Schwarzenegger, Linda Hamilton, Michael Biehn",
+      "Year_of_cinema_release": "1984/1991",
+      "Oscars": "4 altogether",
+      "IMDB link": "http://www.imdb.com/title/tt0088247/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/88018/terminator",
+      "Country": "USA"
+    },
+    {
+      "id": 13,
+      "Film": "The Matrix",
+      "Director": "Andy & Larry Wachowski",
+      "Leading_actors": "Carrie-Anne Moss, Keanu Reeves, Laurence Fishburne",
+      "Year_of_cinema_release": "1999",
+      "Oscars": "4",
+      "IMDB link": "http://www.imdb.com/title/tt0133093/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/77528/matrix",
+      "Country": "USA"
+    },
+    {
+      "id": 14,
+      "Film": "Alphaville",
+      "Director": "Jean Luc-Godard",
+      "Leading_actors": "Anna Karina, Eddie Constantine",
+      "Year_of_cinema_release": "1965",
+      "Oscars": "",
+      "IMDB link": "http://www.imdb.com/title/tt0058898/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/75764/alphaville",
+      "Country": "France"
+    },
+    {
+      "id": 15,
+      "Film": "Back to the Future",
+      "Director": "Robert Zemeckis",
+      "Leading_actors": "Christopher Lloyd, Crispin Glover, Lea Thompson, Michael J Fox, Michael J. Fox",
+      "Year_of_cinema_release": "1985",
+      "Oscars": "1",
+      "IMDB link": "http://www.imdb.com/title/tt0088763/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/78042/back-to-the-future",
+      "Country": "USA"
+    },
+    {
+      "id": 16,
+      "Film": "Planet of the Apes",
+      "Director": "Franklin J Schaffner ",
+      "Leading_actors": "Charlton Heston, Kim Hunter, Roddy McDowell",
+      "Year_of_cinema_release": "1968",
+      "Oscars": "1",
+      "IMDB link": "http://www.imdb.com/title/tt0063442/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/95819/planet-of-the-apes",
+      "Country": "USA"
+    },
+    {
+      "id": 17,
+      "Film": "Brazil",
+      "Director": "Terry Gilliam",
+      "Leading_actors": "Jonathan Pryce, Michael Palin, Robert De Niro",
+      "Year_of_cinema_release": "1985",
+      "Oscars": "",
+      "IMDB link": "http://www.imdb.com/title/tt0088846/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/79920/brazil",
+      "Country": "UK"
+    },
+    {
+      "id": 18,
+      "Film": "The Lord of the Rings trilogy",
+      "Director": "Peter Jackson",
+      "Leading_actors": "Cate Blanchett, Dominic Monaghan, Elijah Wood, Hugo Weaving, John Rhys-Davies, Liv Tyler, Miranda Otto, Orlando Bloom, Sean Astin, Sir Ian McKellen, Viggo Mortensen, William Boyd",
+      "Year_of_cinema_release": "2001-2003",
+      "Oscars": "17 altogether",
+      "IMDB link": "http://www.imdb.com/title/tt0167260/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/92716/lord.of.the.rings",
+      "Country": "New Zealand"
+    },
+    {
+      "id": 19,
+      "Film": "Dark Star",
+      "Director": "John Carpenter",
+      "Leading_actors": "Brian Narelle, Dan O'Bannon, Dre Pahich",
+      "Year_of_cinema_release": "1974",
+      "Oscars": "",
+      "IMDB link": "http://www.imdb.com/title/tt0069945/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/77501/dark-star",
+      "Country": "USA"
+    },
+    {
+      "id": 20,
+      "Film": "Day the Earth Stood Still",
+      "Director": "Robert Wise",
+      "Leading_actors": "Hugh Marlowe, Lock Martin, Michael Rennie, Patricia Neal",
+      "Year_of_cinema_release": "1951",
+      "Oscars": "",
+      "IMDB link": "http://www.imdb.com/title/tt0043456/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/82253/day-the-earth-stood-still",
+      "Country": "USA"
+    },
+    {
+      "id": 21,
+      "Film": "Edward Scissorhands",
+      "Director": "Tim Burton",
+      "Leading_actors": "Dianne Wiest, Johnny Depp, Winona Ryder",
+      "Year_of_cinema_release": "1990",
+      "Oscars": "",
+      "IMDB link": "http://www.imdb.com/title/tt0099487/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/82335/edward.scissorhands",
+      "Country": "USA"
+    },
+    {
+      "id": 22,
+      "Film": "Akira",
+      "Director": "Katsuhiro Otomo",
+      "Leading_actors": "Mitsuo Iwata, Nozomu Sasaki, Mami Koyama, Tessho Genda",
+      "Year_of_cinema_release": "1988",
+      "Oscars": "",
+      "IMDB link": "http://www.imdb.com/title/tt0094625/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/76882/akira",
+      "Country": "Japan"
+    },
+    {
+      "id": 23,
+      "Film": "Princess Bride",
+      "Director": "Rob reiner",
+      "Leading_actors": "Billy Crystal, Carty Elwes, Cary Elwes, Mandy Patinkin, Peter Falk, Robin Wright",
+      "Year_of_cinema_release": "1987",
+      "Oscars": "",
+      "IMDB link": "http://www.imdb.com/title/tt0093779/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/77070/princess-bride",
+      "Country": "USA"
+    },
+    {
+      "id": 24,
+      "Film": "Pan’s Labyrinth",
+      "Director": "Guillermo del Toro",
+      "Leading_actors": " Ariadna Gil, Doug Jones, Ivana Baquero, Maribel Verdu, Sergi Lopez",
+      "Year_of_cinema_release": "2006",
+      "Oscars": "3",
+      "IMDB link": "http://www.imdb.com/title/tt0457430/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/112345/pan.s.labyrinth",
+      "Country": "Spain"
+    },
+    {
+      "id": 25,
+      "Film": "Starship Troopers",
+      "Director": "Paul Verhoeven",
+      "Leading_actors": "Casper Van Dien, Clancy Brown, Dina Meyer, Jake Busey, Michael Ironside",
+      "Year_of_cinema_release": "1997",
+      "Oscars": "",
+      "IMDB link": "http://www.imdb.com/title/tt0120201/",
+      "Guardian film page": "http://www.guardian.co.uk/film/movie/71806/starship-troopers",
+      "Country": "USA"
+    }
+  ]
+}

@@ -1,5 +1,4 @@
-import Overlaymenu from './js/overlaymenu.js';
-import PeakyHeader from './js/peakyheader.js';
+
 
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -35,9 +34,21 @@ import PeakyHeader from './js/peakyheader.js';
         }
     }
 
+    // function initOnLoads() {
+    //     var loads = document.querySelectorAll('[data-onload]');
+    //     for (var i = 0; i < loads.length; i++) {
+    //         let replaceClasses = JSON.parse(replacers[i].dataset.replace.replace(/'/g, '"'));
+    //         Object.keys(replaceClasses).forEach(function (key) {
+    //             replacers[i].classList.remove(key);
+    //             replacers[i].classList.add(replaceClasses[key]);
+    //         });
+    //     }
+    // }
+
 
     function onReady() {
         initReplacements();
+       // initOnLoads();
 
 
         // cleanup

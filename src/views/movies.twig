@@ -1,0 +1,45 @@
+{# data id:sitemenu src: sitemenu.json #}
+{# data src: movies.json #}
+{% extends "base.twig" %}
+{% block content %}
+    <script>
+        const loader = '<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle> <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg>';
+        const loadMovies = function () {
+            let $el = document.getElementById('ajaxcontent');
+            $el.innerHTML = loader;
+            fetch('/api/movies.json?render=_partials/_moviegrid.twig&filter=random&limit=8')
+                .then(response => response.json())
+                .then(data => { $el.innerHTML =data.html; })
+        }
+    </script>
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-20">
+                <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Just a bunch of
+                    films</h2>
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac
+                    Heirloom</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn
+                    asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them
+                    man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+            </div>
+            {# include "_partials/_moviegrid.twig" with movies #}
+
+            <div id="ajaxcontent" x-ref="ajaxcontent">
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </div>
+            <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    x-data="{ loading: false }"
+                    x-init="loadMovies()"
+                    x-on:click="loadMovies()"
+            >
+                Load More
+            </button>
+
+        </div>
+    </section>
+
+{% endblock %}
