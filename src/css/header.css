@@ -9,6 +9,7 @@
 }
 
 .scroll-up .active-header {
+    @apply shadow;
     position: fixed;
     z-index: 21;
     top: 0;
