@@ -1,6 +1,6 @@
 <?php
 /**
- * Ex
+ * Example
  */
 
 namespace App;
@@ -12,35 +12,28 @@ class ApiExtension //extends AbstractExtension
 {
     private $filters;
 
-    public function __construct()  {
+    public function __construct()
+    {
         $this->filters = [
-            'randomise' =>  [$this, 'randomise'],
-            'limit' =>  [$this, 'limit'],
+            'randomise' => [$this, 'randomise'],
+            'limit' => [$this, 'limit'],
         ];
     }
 
-    public function applyFilter($filter, &$data){
-
-        if (is_array($filter)){
-            $name = array_shift($filter);
-
-        } else {
-            $name = $filter;
-            $filter = array();
+    public function applyFilter($name, $data)
+    {
+        if ($name) {
+            if (isset($this->filters[$name])) {
+                $data = call_user_func($this->filters[$name], $data);
+            } else {
+                $this->error("Filter $name not found");
+            }
         }
-
-        if (isset($this->filters[$name])){
-            //echo "calling $name ...";
-            $data = call_user_func($this->filters[$name], $data, $filter);
-
-        } else {
-            //echo "Filter $name not found";
-        }
-
+        return $data;
     }
 
 
-    public function randomise(array $data, $args = array())
+    public function randomise(array $data)
     {
         shuffle($data['movies']);
         return $data;
@@ -48,6 +41,13 @@ class ApiExtension //extends AbstractExtension
 
     public function limit(array $data, $args = array())
     {
-        return array_slice($data, 0, 8);
+        $data['movies'] = array_slice($data['movies'], 0, 8);
+        return $data;
     }
+
+    private function error($msg)
+    {
+        echo $msg;
+    }
+
 }

@@ -7,7 +7,7 @@
         const loadMovies = function () {
             let $el = document.getElementById('ajaxcontent');
             $el.innerHTML = loader;
-            fetch('/api/movies.json?render=_partials/_moviegrid.twig&filter=[["random"], ["limit", 8]]')
+            fetch('/api/movies.json?render=_partials/_moviegrid.twig&filter=randomise,limit')
                 .then(response => response.json())
                 .then(data => { $el.innerHTML =data.html; })
         }
