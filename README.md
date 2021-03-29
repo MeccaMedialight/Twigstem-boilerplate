@@ -1,5 +1,5 @@
 # Twigstem-boilerplate
-Boilerplate for a Twig/Tailwind/Alpine site
+A [Twigstem](https://github.com/MeccaMedialight/twigstem-core) Boilerplate for a Twig/Tailwind/Alpine site. See A [Twigstem](https://github.com/MeccaMedialight/twigstem-core) for more information.
 
 
 ## Setup
