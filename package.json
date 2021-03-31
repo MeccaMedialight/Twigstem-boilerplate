@@ -7,10 +7,13 @@
     "production": "mix --production"
   },
   "dependencies": {
+    "@lottiefiles/lottie-interactivity": "^0.1.4",
+    "@lottiefiles/lottie-player": "^0.5.1",
     "@tailwindcss/typography": "^0.4.0",
     "alpinejs": "^2.8.1",
     "autoprefixer": "^10.2.5",
     "axios": "^0.21.1",
+    "lottie-web": "^5.7.7",
     "postcss": "^8.2.7",
     "postcss-import": "^14.0.0",
     "swiper": "^6.5.0",
