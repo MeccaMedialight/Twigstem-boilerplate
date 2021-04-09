@@ -16,7 +16,7 @@
             {% for i in sections %}
 
                 {% set pg = '_components/' ~ i ~ '.twig' %}
-                <div class="bg-gray-200 p-2 my-8 flex justify-between items-center">
+                <div class="bg-indigo-50 p-4 my-8 flex justify-between items-center -mx-2 rounded-xl">
                     <span>{{ i }}</span>
                     {{ makeCopyWidget(pg) | raw }}
                 </div>
@@ -33,7 +33,6 @@
             copyText.select();
             copyText.setSelectionRange(0, 99999);
             document.execCommand("copy");
-
             var tooltip = document.getElementById('tt' + id);
             tooltip.innerHTML = "Copied!";
         }
