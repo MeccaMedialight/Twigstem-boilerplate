@@ -3,18 +3,44 @@
 {% block content %}
     <div class="relative overflow-hidden">
         <div class="container mx-auto relative px-4">
-            {% set sections = listAllSections() %}
-
-            <p>The following sections have been found in the "views/_sections" directory.</p>
-
+            <div class="my-2">
+                {% set types = listAllComponentTypes('_components') %}
+                <span><a href="/sections?t=*" class="btn">All</a></span> |
+                {% for t, o in types %}
+                    <span><a href="/sections?t={{ t }}" class="btn btn-secondary">{{ t }}</a></span>
+                {% endfor %}
+            </div>
+            {% set type = inRequest('t', '') %}
+            {% set sections = listComponentsOfType('_components', type) %}
 
             {% for i in sections %}
 
+                {% set pg = '_components/' ~ i ~ '.twig' %}
+                <div class="bg-gray-200 p-2 my-8 flex justify-between items-center">
+                    <span>{{ i }}</span>
+                    {{ makeCopyWidget(pg) | raw }}
+                </div>
 
-                <h2 class="bg-gray-200 p-2 my-4">{{ i }}</h2>
-                {% set pg = '_sections/' ~ i ~ '.twig'  %}
                 {% include pg %}
+
+
             {% endfor %}
         </div>
     </div>
+    <script>
+        function copyComponent(id) {
+            var copyText = document.getElementById(id);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+
+            var tooltip = document.getElementById('tt' + id);
+            tooltip.innerHTML = "Copied!";
+        }
+
+        function outFunc(id) {
+            var tooltip = document.getElementById('tt' + id);
+            tooltip.innerHTML = "Copy to clipboard";
+        }
+    </script>
 {% endblock %}
