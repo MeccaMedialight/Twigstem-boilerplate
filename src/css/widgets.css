@@ -9,3 +9,16 @@
     content: "";
     background-color: rgba(0, 0, 0, 0);
 }
+
+#jaxit {
+    visibility: visible;
+    display: block;
+}
+
+
+#jaxit.unloading {
+    transition: all;
+    opacity: 0;
+    transform: scale(0.9) translateY(8px);
+
+}

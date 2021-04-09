@@ -7,12 +7,6 @@
 }(this, function () {
     'use strict';
 
-
-
-    //
-
-
-
     /**
      * Animation helper
      * https://devdojo.com/tnylea/animating-tailwind-transitions-on-page-load

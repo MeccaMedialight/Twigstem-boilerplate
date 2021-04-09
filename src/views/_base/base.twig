@@ -1,11 +1,21 @@
 <!doctype html>
 <html lang="en">
 {% include "_base/head.twig" %}
-<body class="font-custom min-h-screen">
+<body class="font-custom min-h-screen" x-data="{ ajaxloaded: true}">
 {% include "header.twig" %}
 
 
-<main class="">
+<main   id="jaxit"
+        x-on:content-loaded="ajaxloaded = true"
+        x-on:content-changing="ajaxloaded = false"
+        x-show.transition="ajaxloaded"
+        x-transition:enter="transition ease-out duration-500"
+        x-transition:enter-start="opacity-0 transform scale-95"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-95"
+>
     {% block content %}
             {% include "content.twig" %}
     {% endblock %}
