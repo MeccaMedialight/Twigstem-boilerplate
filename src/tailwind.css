@@ -8,5 +8,6 @@
 @import "./css/labels.css";
 @import "./css/tooltip.css";
 @import "./css/widgets.css";
+@import "./css/alignment.css";
 
 @import "tailwindcss/utilities";
