@@ -20,6 +20,8 @@ class TwigExtension extends AbstractExtension
             new TwigFunction('directoryMenu', [$this, 'directoryMenu']),
             new TwigFunction('makeCopyWidget', [$this, 'makeCopyWidget']),
             new TwigFunction('lorem', [$this, 'lorem']),
+            new TwigFunction('breadcrumb', [$this, 'breadcrumb']),
+            new TwigFunction('loadData', [$this, 'loadData']),
         ];
     }
 
@@ -46,6 +48,17 @@ class TwigExtension extends AbstractExtension
         }
         return $default;
 
+    }
+
+    /**
+     * Load the data for a twig into the page context
+     * @param $tplName
+     */
+    public function loadData($tplName)
+    {
+        $Twigstem = \Twigstem\Server::getInstance();
+        $data = $Twigstem->getTemplateData($tplName);
+        return $data;
     }
 
     /**
@@ -113,8 +126,6 @@ class TwigExtension extends AbstractExtension
                 );
 
 
-
-
                 $out[] = $node;
             }
 
@@ -135,6 +146,30 @@ class TwigExtension extends AbstractExtension
     {
         $srcDir = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'views';
         return $this->children($srcDir, '/');
+    }
+
+    public function breadcrumb()
+    {
+        $here = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+        $bits = explode('/', $here);
+        $out = [];
+        $last = '';
+        if (count($bits) > 1) {
+
+            $out[] = [
+                'name' => 'Home',
+                'url' => '/'
+            ];
+
+            foreach ($bits as $f) {
+                $last .= '/' . $f;
+                $out[] = [
+                    'name' => self::nicefy($f),
+                    'url' => $last //. '.twig',
+                ];
+            }
+        }
+        return $out;
     }
 
     private function children($parent, $urlRoot): array
@@ -214,7 +249,7 @@ class TwigExtension extends AbstractExtension
         //$data = array();
         if (preg_match_all("/{#\s*([^}]*)#}/", $str, $matches)) {
             foreach ($matches[1] as $matched) {
-               return $matched;
+                return $matched;
             }
         }
         return '';

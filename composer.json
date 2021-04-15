@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "mml/twigstem": "1.*",
+        "mml/twigstem": "^1.0.8",
         "twig/twig": "^3.3"
     },
     "autoload": {

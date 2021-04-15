@@ -30,8 +30,7 @@ require __DIR__.'/../vendor/autoload.php';
 
 // path to application (directory containing views and data)
 $appDir = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR;
-$Twigstem = new \Twigstem\Server($appDir);
-
-$Twigstem->serve();
+$Twigstem = \Twigstem\Server::getInstance();
+$Twigstem->init($appDir)->serve();
 
 

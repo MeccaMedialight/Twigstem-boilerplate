@@ -2053,18 +2053,6 @@ module.exports = webpackEmptyContext;
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-__webpack_require__(/*! ./bootstrap.js */ "./src/bootstrap.js");
-
-__webpack_require__(/*! ./ui.js */ "./src/ui.js");
-
-/***/ }),
-
-/***/ "./src/bootstrap.js":
-/*!**************************!*\
-  !*** ./src/bootstrap.js ***!
-  \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2077,12 +2065,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_peakyheader_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_peakyheader_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _js_lotties_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/lotties.js */ "./src/js/lotties.js");
 /* harmony import */ var _js_autojax_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/autojax.js */ "./src/js/autojax.js");
+/* harmony import */ var _ui_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ui.js */ "./src/ui.js");
+/* harmony import */ var _ui_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_ui_js__WEBPACK_IMPORTED_MODULE_5__);
+//require('./bootstrap.js');
 
 
 
 
 
 _js_autojax_js__WEBPACK_IMPORTED_MODULE_4__.autojax.init('jaxit');
+
 
 /***/ }),
 
@@ -2278,6 +2270,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
   var transitionEndEventName = getTransitionEndEventName();
 
   function toggleMenu() {
+    console.log('toggleMenu');
     var body = document.querySelector('body');
     body.classList.toggle('menu-open');
     var modal = document.querySelector('.overlaymenu'); //modal.classList.toggle('pointer-events-none')
@@ -2504,8 +2497,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
 
 
   function onReady() {
-    initReplacements(); // initOnLoads();
-    // cleanup
+    initReplacements(); // cleanup
 
     var clean = document.querySelectorAll('.clearstyle');
     Array.prototype.forEach.call(clean, function (element) {
