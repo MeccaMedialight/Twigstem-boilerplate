@@ -65,26 +65,6 @@ class Builder
 
     }
 
-    static function render2($root = 'root')
-    {
-        $out = array();
-
-        for ($y = 21; $y > 18; $y--) {
-            $out[] = [
-                'year' => '20' . $y,
-                'approvals' => self::createArr(12, function () {
-                    $node = [
-                        'Applicant' => self::buildSentence(3, 6),
-                        'Project' => self::buildSentence(3, 8),
-                        'Amount' => '$' . rand(10, 30) . ',000'
-                    ];
-                    return $node;
-
-                })
-            ];
-        }
-        echo json_encode([$root => $out]);
-    }
 
     static private function getMockery($key, $params = array())
     {
@@ -97,6 +77,12 @@ class Builder
         }
         return $key;
     }
+
+    /**
+     * ------------------------------------------------------------------------------------------------
+     *  Mockup Methods
+     * ------------------------------------------------------------------------------------------------
+     */
 
     static private function buildTitle()
     {
@@ -173,6 +159,7 @@ class Builder
         }
 
         $mx = count($params);
+        $exact = false;
         switch ($mx) {
             case 2:
                 $w = (int)$params[0];
@@ -189,13 +176,17 @@ class Builder
             default:
                 $w = (int)$params[0];
                 $h = (int)$params[1];
+                $exact = true;
+
         }
 
 
         $size = "$w/$h";
-        $stem = substr($size, 0, -1);
-        $size = $stem . (self::$COUNTERS['img'] % 10);
-
+        if (!$exact) {
+            $stem = substr($size, 0, -1);
+            $size = $stem . (self::$COUNTERS['img'] % 10);
+            self::$COUNTERS['img']++;
+        }
         return "https://placeimg.com/$size/animals/grayscale";
     }
 
@@ -430,62 +421,64 @@ class Builder
             if ($action == 'build') {
                 $json = Builder::render($root, $max, $tpl);
             } else {
-              //  $json = 'Set your template and click <a href="#" onclick="document.getElementById(\'configBuilder\').submit();">build</a>';
+                //  $json = 'Set your template and click <a href="#" onclick="document.getElementById(\'configBuilder\').submit();">build</a>';
                 $json = 'Set your template and click build';
             }
             ?>
-            <textarea class="bg-black text-white border shadow w-full  overflow-y-scroll p-4" style="height: 50vh"><?php echo $json; ?></textarea>
+            <textarea class="bg-black text-white border shadow w-full  overflow-y-scroll p-4"
+                      style="height: 80vh"><?php echo $json; ?></textarea>
             <div class="border bg-blue-100 shadow p-4 lg:p-8">
-            <form method="post" id="configBuilder">
-                <input type="hidden" id="action" name="action" value="build"/>
-                <div class="relative flex-grow w-full mb-8">
-                    <label for="tpl-name" class="flex leading-7 text-sm text-gray-600">Template for each record
-                    <a href="#help" class="text-blue-200 ml-2">
-                        Huh?
-                    </a>
-                    </label>
+                <form method="post" id="configBuilder">
+                    <input type="hidden" id="action" name="action" value="build"/>
+                    <div class="relative flex-grow w-full mb-8">
+                        <label for="tpl-name" class="flex leading-7 text-sm text-gray-600">Template for each record
+                            <a href="#help" class="text-blue-200 ml-2">
+                                Huh?
+                            </a>
+                        </label>
 
-                    <div contenteditable="true"
-                         id="tpl-name-edit"
-                         data-target="tpl-name"
-                         class="w-full bg-gray-100 bg-opacity-50 rounded-full border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"><?php echo $tpl ?></div>
-                    <input type="hidden" id="tpl-name" name="tpl"
-                           value="<?php echo $tpl ?>"
-                           class="w-full bg-gray-100 bg-opacity-50 rounded-full border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                </div>
-
-
-                <div class="flex w-full sm:flex-row flex-col px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
-
-
-                    <div class="relative flex-grow w-full">
-                        <label for="root-name" class="leading-7 text-sm text-gray-600">Root Property</label>
-                        <input type="text" id="root-name" name="root"
-                               value="<?php echo $root ?>"
+                        <div contenteditable="true"
+                             id="tpl-name-edit"
+                             data-target="tpl-name"
+                             class="w-full bg-gray-100 bg-opacity-50 rounded-full border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"><?php echo $tpl ?></div>
+                        <input type="hidden" id="tpl-name" name="tpl"
+                               value="<?php echo $tpl ?>"
                                class="w-full bg-gray-100 bg-opacity-50 rounded-full border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                     </div>
 
 
-                    <div class="relative flex-grow ">
-                        <label for="max-name" class="leading-7 text-sm text-gray-600">Rows</label>
-                        <input type="number" id="max-name" name="max" value="<?php echo $max ?>"
+                    <div class="flex w-full sm:flex-row flex-col px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
 
-                               class="w-full bg-gray-100 bg-opacity-50 rounded-full border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+
+                        <div class="relative flex-grow w-full">
+                            <label for="root-name" class="leading-7 text-sm text-gray-600">Root Property</label>
+                            <input type="text" id="root-name" name="root"
+                                   value="<?php echo $root ?>"
+                                   class="w-full bg-gray-100 bg-opacity-50 rounded-full border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+
+
+                        <div class="relative flex-grow ">
+                            <label for="max-name" class="leading-7 text-sm text-gray-600">Rows</label>
+                            <input type="number" id="max-name" name="max" value="<?php echo $max ?>"
+
+                                   class="w-full bg-gray-100 bg-opacity-50 rounded-full border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                        <button type="submit" class="btn btn-secondary">
+                            Build
+                        </button>
                     </div>
-                    <button type="submit" class="btn btn-secondary">
-                        Build
-                    </button>
-                </div>
-            </form>
+                </form>
             </div>
 
             <div id="help" class=" my-12 py-12 ">
                 <h3>Templates</h3>
                 <div class="my-1 text-gray-500 ">
                     <p>Template for each record. Separate each column with a pipe character: eg <span
-                                class="colgrp">Title</span> | <span class="colgrp">Synopsis</span> | <span class="colgrp">Author</span></p>
+                                class="colgrp">Title</span> | <span class="colgrp">Synopsis</span> | <span
+                                class="colgrp">Author</span></p>
                     <p>
-                    The content for each column can be specified like
+                        The content for each column can be specified like
                     </p>
                     <pre class="p-2 bg-gray-50">
 Foo                 -- "foo" is both the fieldName and the value
@@ -493,9 +486,9 @@ Foo:Bar             -- "foo" is the fieldName and the value is either the litera
 Foo:<span class="func">Bar</span>				--  or if "Bar" is matched to a function, then the value returned by that function
 Foo:<span class="func">Image</span>,<span class="param">1200</span>,<span class="param">800</span>  -- "foo" is the fieldName and "Image" is a function that takes width and height as parameters
                     </pre>
-<p>
-                    The following helper functions are available:
-</p>
+                    <p>
+                        The following helper functions are available:
+                    </p>
                     <?php
                     //                    $helpers = Builder::listAllBuildFunctions(false);
                     //                    foreach ($helpers as $helper) {
@@ -525,7 +518,9 @@ Foo:<span class="func">Image</span>,<span class="param">1200</span>,<span class=
                         <tr class="mb-1">
                             <td style="vertical-align: top" class="border-t align-top p-2 func">image</td>
                             <td style="vertical-align: top" class="border-t p-2">Produces a url to an image from
-                                https://placeimg.com. Can specify with and height (eg image,600,400)
+                                https://placeimg.com. Can specify with and height (eg image,600,400). Note the height will
+                                increment by 1 with each image (to ensure you get a different image each time). To make the
+                                images exactly the same size, add a third paramter  (eg image,600,400,exact)
                             </td>
                         </tr>
                         <tr class="mb-1">

@@ -21,6 +21,7 @@ class TwigExtension extends AbstractExtension
             new TwigFunction('makeCopyWidget', [$this, 'makeCopyWidget']),
             new TwigFunction('lorem', [$this, 'lorem']),
             new TwigFunction('breadcrumb', [$this, 'breadcrumb']),
+            new TwigFunction('loadData', [$this, 'loadData']),
         ];
     }
 
@@ -47,6 +48,17 @@ class TwigExtension extends AbstractExtension
         }
         return $default;
 
+    }
+
+    /**
+     * Load the data for a twig into the page context
+     * @param $tplName
+     */
+    public function loadData($tplName)
+    {
+        $Twigstem = \Twigstem\Server::getInstance();
+        $data = $Twigstem->getTemplateData($tplName);
+        return $data;
     }
 
     /**

@@ -23,8 +23,8 @@
                     </span>
                     {{ makeCopyWidget(pg) | raw }}
                 </div>
-
-                {% include pg %}
+                {% set data =  loadData(i.name) %}
+                {% include pg with data %}
 
 
             {% endfor %}
