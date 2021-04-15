@@ -3,11 +3,12 @@
 {% block content %}
     <div class="relative overflow-hidden">
         <div class="container mx-auto relative px-4">
-            <div class="my-2">
+
+            <div class="my-4 mr-1 flex flex-wrap">
                 {% set types = listAllComponentTypes('_components') %}
-                <span><a href="/sections?t=*" class="btn ajax">All</a></span> |
+                <div class="mb-4 mr-1"><a href="/sections?t=*" class="btn ajax">Everything</a></div>
                 {% for t, o in types %}
-                    <span><a href="/sections?t={{ t }}" class="btn btn-secondary ajax   z">{{ t }}</a></span>
+                    <div class="mb-4 mr-1"><a href="/sections?t={{ t }}" class="btn btn-secondary ajax   z">{{ t }}</a></div>
                 {% endfor %}
             </div>
             {% set type = inRequest('t', '') %}
@@ -17,7 +18,7 @@
 
                 {% set pg = '_components/' ~ i.name ~ '.twig' %}
                 <div class="bg-indigo-50 p-4 my-8 flex justify-between items-center -mx-2 rounded-xl">
-                    <span>{{ i.name }}
+                    <span >{{ i.name }}
                         {% if (i.info) %} <span class="ml-2 text-gray-300">{{ i.info }}</span>{% endif %}
                     </span>
                     {{ makeCopyWidget(pg) | raw }}

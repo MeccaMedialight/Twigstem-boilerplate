@@ -42,8 +42,6 @@
 
     function onReady() {
         initReplacements();
-       // initOnLoads();
-
 
         // cleanup
         let clean = document.querySelectorAll('.clearstyle')

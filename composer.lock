@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "653eaff56a7bc89116d0ccd5ae022179",
+    "content-hash": "a097930f5cc53676ee2a88b4a077d085",
     "packages": [
         {
             "name": "mml/twigstem",
-            "version": "v1.0.6",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MeccaMedialight/twigstem-core.git",
-                "reference": "5e0c8820b9e710b948980f4c422d79edb39364c5"
+                "reference": "f45451e49d191e12c88814cb401da2567c01e4a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MeccaMedialight/twigstem-core/zipball/5e0c8820b9e710b948980f4c422d79edb39364c5",
-                "reference": "5e0c8820b9e710b948980f4c422d79edb39364c5",
+                "url": "https://api.github.com/repos/MeccaMedialight/twigstem-core/zipball/f45451e49d191e12c88814cb401da2567c01e4a2",
+                "reference": "f45451e49d191e12c88814cb401da2567c01e4a2",
                 "shasum": ""
             },
             "require": {
@@ -48,9 +48,9 @@
             ],
             "support": {
                 "issues": "https://github.com/MeccaMedialight/twigstem-core/issues",
-                "source": "https://github.com/MeccaMedialight/twigstem-core/tree/v1.0.6"
+                "source": "https://github.com/MeccaMedialight/twigstem-core/tree/v1.0.8"
             },
-            "time": "2021-03-29T02:17:46+00:00"
+            "time": "2021-04-12T12:59:52+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",

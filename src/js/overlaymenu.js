@@ -54,6 +54,7 @@
     let transitionEndEventName = getTransitionEndEventName();
 
     function toggleMenu() {
+        console.log('toggleMenu');
         const body = document.querySelector('body')
         body.classList.toggle('menu-open')
         const modal = document.querySelector('.overlaymenu')
