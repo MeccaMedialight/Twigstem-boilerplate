@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "mml/twigstem",
-            "version": "v1.0.8",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MeccaMedialight/twigstem-core.git",
-                "reference": "f45451e49d191e12c88814cb401da2567c01e4a2"
+                "reference": "aa89b02bcc87d14d55cecf4c0751a959d193f044"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MeccaMedialight/twigstem-core/zipball/f45451e49d191e12c88814cb401da2567c01e4a2",
-                "reference": "f45451e49d191e12c88814cb401da2567c01e4a2",
+                "url": "https://api.github.com/repos/MeccaMedialight/twigstem-core/zipball/aa89b02bcc87d14d55cecf4c0751a959d193f044",
+                "reference": "aa89b02bcc87d14d55cecf4c0751a959d193f044",
                 "shasum": ""
             },
             "require": {
@@ -46,11 +46,7 @@
                 "php",
                 "twig"
             ],
-            "support": {
-                "issues": "https://github.com/MeccaMedialight/twigstem-core/issues",
-                "source": "https://github.com/MeccaMedialight/twigstem-core/tree/v1.0.8"
-            },
-            "time": "2021-04-12T12:59:52+00:00"
+            "time": "2021-04-15T06:57:04+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -296,5 +292,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
