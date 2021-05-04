@@ -1,0 +1,26 @@
+<div x-data="data()" class="p-4">
+    <a @click.prevent @dblclick="toggleEditingState" x-show="!isEditing" x-text="text" class="select-none cursor-pointer underline text-blue-500"></a>
+    <input type="text" x-model="text" x-show="isEditing" @click.away="toggleEditingState" @keydown.enter="disableEditing" @keydown.window.escape="disableEditing" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 appearance-none leading-normal w-128" x-ref="input">
+</div>
+<script>
+    function data() {
+        return {
+            text: "Example text. Double click to edit",
+            isEditing: false,
+            toggleEditingState() {
+                this.isEditing = !this.isEditing;
+
+                if (this.isEditing) {
+                    this.$nextTick(() => {
+                        this.$refs.input.focus();
+                    });
+                }
+            },
+            disableEditing() {
+                this.isEditing = false;
+            }
+        };
+    }
+
+
+</script>
