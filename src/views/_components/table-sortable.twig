@@ -5,31 +5,45 @@
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                     <tr>
-                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" >
-
-                            <button @click="data.sort(compareValues('last_name', 'asc'))" data-srt="asc"> Name</button>
+                        <th scope="col"
+                            class="px-6  py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <!-- data.sort(compareValues('last_name', 'asc', ref))-->
+                            <button :class="{ 'active ': srt.heading === 'last_name' }"
+                                    @click="sortTable($event, 'last_name');">
+                                Name
+                            </button>
                         </th>
-                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-
-                            <button @click="data.sort(compareValues('email', 'asc'))">Email</button>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <button :class="{ 'active': srt.heading === 'email' }" @click="sortTable($event, 'email');">
+                                Email
+                            </button>
                         </th>
-                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-
-                            <button @click="data.sort(compareValues('gender', 'asc'))">Gender</button>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <button :class="{ 'active': srt.heading === 'gender' }"
+                                    @click="sortTable($event, 'gender');">
+                                Gender
+                            </button>
                         </th>
-                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <button :class="{ 'active': srt.heading === 'ip_address' }"
+                                    @click="sortTable($event, 'ip_address');">
+                                Name
+                            </button>
 
-                            <button @click="data.sort(compareValues('last_name', 'asc'))"> IP Address</button>
                         </th>
                     </tr>
                     </thead>
                     <tbody>
                     <template x-for="item in data" :key="item">
                         <tr>
-                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"  x-text="item.first_name + ' ' + item.last_name"></td>
-                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"  x-text="item.email"></td>
-                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"  x-text="item.gender"></td>
-                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"  x-text="item.ip_address"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
+                                x-text="item.first_name + ' ' + item.last_name"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="item.email"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="item.gender"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="item.ip_address"></td>
                         </tr>
                     </template>
                     </tbody>
@@ -41,6 +55,10 @@
 <script>
     function tabledata() {
         return {
+            srt: {
+                heading: '',
+                direction: ''
+            },
             data: [
                 {
                     first_name: "Lois",
@@ -114,6 +132,7 @@
                 }
             ],
             compareValues: function (key, order = "asc") {
+                console.log(key, order)
                 return function innerSort(a, b) {
                     if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
                         return 0;
@@ -130,10 +149,33 @@
                     }
                     return order === "desc" ? comparison * -1 : comparison;
                 };
+            },
+            sortTable: function (e, f) {
+                console.log('setting sort field to', f)
+                if (f == this.srt.heading) {
+                    // clicking activing heading... toggle direction
+                    if (this.srt.direction == 'desc') {
+                        this.srt.direction = 'asc';
+                    } else {
+                        this.srt.direction = 'desc';
+                    }
+                    console.log('setting sort direction to', this.srt.direction)
+                } else {
+                    this.srt.heading = f;
+                }
+                this.data.sort(this.compareValues(this.srt.heading, this.srt.direction))
+
             }
-        };
+
+        }
     }
 
 
 </script>
 
+<style>
+
+    .active {
+        text-decoration: underline;
+    }
+</style>
