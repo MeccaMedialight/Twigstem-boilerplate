@@ -1,0 +1,44 @@
+{#
+    // in mainjs.
+    import popoverMaker from './js/popover';
+
+    function initPopovers() {
+        let popovers = document.querySelectorAll('[data-popover]');
+        for (var i = 0; i < popovers.length; i++) {
+            let trigger = popovers[i];
+            let config = JSON.parse(trigger.dataset.popover.replace(/'/g, '"'));
+            let target = document.querySelector(config.target);
+            popoverMaker(trigger, target);
+
+        }
+    }
+
+
+    function onReady() {
+        initPopovers();
+        ...
+    }
+
+    document.addEventListener('DOMContentLoaded', onReady);
+
+#}
+{#
+@uses
+#}
+{% set targetID = targetID?? "popover-id" %}
+<div class="flex flex-wrap">
+    <div class="w-full text-center">
+        <button class="btn" type="button"  data-popover="{ 'target': '#{{ targetID }}' }" >
+            Open Popover
+        </button>
+        <div class="hidden  bg-gray-600 border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg " id="{{ targetID }}">
+            <div class="bg-gray-600 text-white opacity-75 font-semibold p-3 mb-0 border-b border-solid border-gray-100 uppercase rounded-t-lg transition-all">
+                gray popover title
+            </div>
+            <div class="text-white p-3">
+                And here's some amazing content. It's very engaging. Right?
+            </div>
+        </div>
+    </div>
+</div>
+

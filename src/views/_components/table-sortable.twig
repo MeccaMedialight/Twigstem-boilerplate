@@ -1,0 +1,181 @@
+<div class="flex flex-col">
+    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div x-data="tabledata()" class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col"
+                            class="px-6  py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <!-- data.sort(compareValues('last_name', 'asc', ref))-->
+                            <button :class="{ 'active ': srt.heading === 'last_name' }"
+                                    @click="sortTable($event, 'last_name');">
+                                Name
+                            </button>
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <button :class="{ 'active': srt.heading === 'email' }" @click="sortTable($event, 'email');">
+                                Email
+                            </button>
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <button :class="{ 'active': srt.heading === 'gender' }"
+                                    @click="sortTable($event, 'gender');">
+                                Gender
+                            </button>
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <button :class="{ 'active': srt.heading === 'ip_address' }"
+                                    @click="sortTable($event, 'ip_address');">
+                                Name
+                            </button>
+
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <template x-for="item in data" :key="item">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
+                                x-text="item.first_name + ' ' + item.last_name"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="item.email"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="item.gender"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="item.ip_address"></td>
+                        </tr>
+                    </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function tabledata() {
+        return {
+            srt: {
+                heading: '',
+                direction: ''
+            },
+            data: [
+                {
+                    first_name: "Lois",
+                    last_name: "Blackstone",
+                    email: "lblackstone0@themeforest.net",
+                    gender: "Female",
+                    ip_address: "177.35.193.173"
+                },
+                {
+                    first_name: "Merell",
+                    last_name: "Cainey",
+                    email: "mcainey1@surveymonkey.com",
+                    gender: "Male",
+                    ip_address: "148.101.60.9"
+                },
+                {
+                    first_name: "Oliviero",
+                    last_name: "Boscher",
+                    email: "oboscher2@arstechnica.com",
+                    gender: "Male",
+                    ip_address: "106.144.102.137"
+                },
+                {
+                    first_name: "Ellswerth",
+                    last_name: "Chess",
+                    email: "echess3@surveymonkey.com",
+                    gender: "Male",
+                    ip_address: "102.187.60.12"
+                },
+                {
+                    first_name: "Beatrix",
+                    last_name: "Jako",
+                    email: "bjako4@sphinn.com",
+                    gender: "Female",
+                    ip_address: "107.126.239.65"
+                },
+                {
+                    first_name: "Renie",
+                    last_name: "Roscamp",
+                    email: "rroscamp5@symantec.com",
+                    gender: "Female",
+                    ip_address: "203.163.188.39"
+                },
+                {
+                    first_name: "Massimo",
+                    last_name: "Greenroad",
+                    email: "mgreenroad6@aboutads.info",
+                    gender: "Male",
+                    ip_address: "246.217.12.156"
+                },
+                {
+                    first_name: "Cathee",
+                    last_name: "Ferrillio",
+                    email: "cferrillio7@odnoklassniki.ru",
+                    gender: "Female",
+                    ip_address: "226.160.191.163"
+                },
+                {
+                    first_name: "Emilia",
+                    last_name: "Brownbill",
+                    email: "ebrownbill8@globo.com",
+                    gender: "Female",
+                    ip_address: "148.159.198.215"
+                },
+                {
+                    first_name: "Brock",
+                    last_name: "Petrasso",
+                    email: "bpetrasso9@shop-pro.jp",
+                    gender: "Male",
+                    ip_address: "183.135.68.137"
+                }
+            ],
+            compareValues: function (key, order = "asc") {
+                console.log(key, order)
+                return function innerSort(a, b) {
+                    if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+                        return 0;
+                    }
+
+                    const varA = typeof a[key] === "string" ? a[key].toUpperCase() : a[key];
+                    const varB = typeof b[key] === "string" ? b[key].toUpperCase() : b[key];
+
+                    let comparison = 0;
+                    if (varA > varB) {
+                        comparison = 1;
+                    } else if (varA < varB) {
+                        comparison = -1;
+                    }
+                    return order === "desc" ? comparison * -1 : comparison;
+                };
+            },
+            sortTable: function (e, f) {
+                console.log('setting sort field to', f)
+                if (f == this.srt.heading) {
+                    // clicking activing heading... toggle direction
+                    if (this.srt.direction == 'desc') {
+                        this.srt.direction = 'asc';
+                    } else {
+                        this.srt.direction = 'desc';
+                    }
+                    console.log('setting sort direction to', this.srt.direction)
+                } else {
+                    this.srt.heading = f;
+                }
+                this.data.sort(this.compareValues(this.srt.heading, this.srt.direction))
+
+            }
+
+        }
+    }
+
+
+</script>
+
+<style>
+
+    .active {
+        text-decoration: underline;
+    }
+</style>

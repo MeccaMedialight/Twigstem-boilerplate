@@ -1,0 +1,9 @@
+<button
+        x-data="{usedKeyboard: false}"
+        @keydown.window.tab="usedKeyboard = true"
+        role=button
+        @click="$dispatch('open-slideoutmenu', { open: true })"
+        :class="{'focus:outline-none': !usedKeyboard}"
+        class="btn">
+    Open Menu
+</button>

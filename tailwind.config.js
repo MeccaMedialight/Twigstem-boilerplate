@@ -65,12 +65,16 @@ module.exports = {
                 '1/3': '33.333333%',
                 '2/3': '66.666667%',
                 '9/16': '0.5625'
-            }
+            },
+
         },
     },
     variants: {},
     plugins: [
         require('@tailwindcss/typography'),
+        require('@tailwindcss/typography'),
+        require('@tailwindcss/line-clamp'),
+        require('@tailwindcss/aspect-ratio'),
         //require('@tailwindcss/ui'),
     ],
 }
